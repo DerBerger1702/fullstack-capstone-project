@@ -1,6 +1,9 @@
+const raw =
+  process.env.REACT_APP_BACKEND_URL ||
+  (typeof window !== 'undefined' ? window.location.origin : '');
 const config = {
-  backendUrl: process.env.REACT_APP_BACKEND_URL,
+  backendUrl: typeof raw === 'string' ? raw.replace(/\/+$/, '') : '',
 };
 
-console.log(`backendUrl in config.js: ${config.backendUrl}`)
-export {config as urlConfig}
+console.log(`backendUrl in config.js: ${config.backendUrl}`);
+export { config as urlConfig };

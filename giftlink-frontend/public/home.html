@@ -9,20 +9,30 @@
     <link rel="stylesheet" href="/static/home.css">
 </head>
 <body>
-    <div class="container my-5">
+    <div class="container my-5 content">
         <div class="text-center">
             <!-- Task 1: Add the main heading -->
             <h1 class="display-4 mb-3"> GiftLink</h1> <!-- insert code here -->
             
             <!-- Task 2: Add the subheading -->
-            <h2 class="text-muted">Find the perfect gift for your loved ones</h2> <!-- insert code here -->
+            <h2 class="mb-4">Share Gifts and Joy!</h2> <!-- insert code here -->
             
             <!-- Task 3: Add the inspirational quote -->
-            <p class="lead">"The best way to predict the future is to invent it." - Alan Kay</p> <!-- insert code here -->
+            <p class="lead">"Sharing is the essence of community. It is through giving that we enrich and perpetuate both our lives and the lives of others." - Maya Angelou</p> <!-- insert code here -->
             
-            <!-- Task 4: Add the 'Get Started' button -->
-            <a href="/search" class="btn btn-primary btn-lg">Get Started</a> <!-- insert code here -->
+            <!-- Task 4: Add the 'Get Started' button (form ensures navigation works without JS) -->
+            <form action="/app" method="get" style="display:inline;">
+                <button type="submit" class="btn btn-primary">Get Started</button>
+            </form>
         </div>
     </div>
+    <script>
+        (function() {
+            if (window.location.protocol === 'file:') {
+                var form = document.querySelector('form[action="/app"]');
+                if (form) form.action = 'http://localhost:3060/app';
+            }
+        })();
+    </script>
 </body>
 </html>
