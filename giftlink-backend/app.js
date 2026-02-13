@@ -28,7 +28,6 @@ const giftRoutes = require('./routes/giftRoutes'); //{{insert code here}}
 // Search API Task 1: import the searchRoutes and store in a constant called searchRoutes
 const searchRoutes = require('./routes/searchRoutes'); //{{insert code here}}
 
-
 const pinoHttp = require('pino-http');
 const logger = require('./logger');
 
